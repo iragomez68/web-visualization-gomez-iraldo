@@ -1,0 +1,2468 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap/Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Resources/assets/css/style.css">
+    <title>Time of Day</title>
+    <link rel="shortcut icon" href="Resources/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="Resources/assets/images/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="data_table">
+     <!-- navbar -->
+     <nav class="navbar navbar-light navbar-expand-md bg-light justify-content-center">
+      <a href="index.html" class="navbar-brand d-flex  mr-auto justify-content-center" style="color: white; background-color: teal; width: 300px; justify-content: center; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Major Crime Indicators</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+    <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
+      <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Plots
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="median.html">vs. HH Median Income</a>
+            <a class="dropdown-item" href="dow.html">vs. Day of Week</a>
+            <a class="dropdown-item" href="tod.html">vs. Time of Day</a>
+            <a class="dropdown-item" href="premise.html">vs. Premise Type</a>
+          </div>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="comparison.html">Comparison</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="data.html">Data</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-source-tab" data-toggle="tab" href="#nav-source" role="tab" aria-controls="nav-source" aria-selected="true">Source</a>
+    <a class="nav-item nav-link" id="nav-household-tab" data-toggle="tab" href="#nav-household" role="tab" aria-controls="nav-household" aria-selected="false">Household</a>
+    <a class="nav-item nav-link" id="nav-day-of-week-tab" data-toggle="tab" href="#nav-dow" role="tab" aria-controls="nav-dow" aria-selected="false">Day of Week</a>
+    <a class="nav-item nav-link" id="nav-time-of-day-tab" data-toggle="tab" href="#nav-tod" role="tab" aria-controls="nav-tod" aria-selected="false">Time of Day</a>
+    <a class="nav-item nav-link" id="nav-premise-tab" data-toggle="tab" href="#nav-premise" role="tab" aria-controls="nav-premise" aria-selected="false">Premise Type</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-source" role="tabpanel" aria-labelledby="nav-source-tab">
+      <table class="table table-striped">
+          <thead>
+            <tr style="text-align: left;">
+              <th>Incident Id</th>
+              <th>MCI</th>
+              <th>Premise Type</th>
+              <th>Day of Week</th>
+              <th>Time of Day</th>
+              <th>Ward No</th>
+              <th>Ward Name</th>
+              <th>Median Income</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>87378</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Sunday</td>
+              <td>13</td>
+              <td>Ward 7</td>
+              <td>York West (Ward 7)</td>
+              <td>59339.0</td>
+            </tr>
+            <tr>
+              <td>28340</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Thursday</td>
+              <td>11</td>
+              <td>Ward 17</td>
+              <td>Davenport (Ward 17)</td>
+              <td>67701.0</td>
+            </tr>
+            <tr>
+              <td>159348</td>
+              <td>Auto Theft</td>
+              <td>House</td>
+              <td>Tuesday</td>
+              <td>23</td>
+              <td>Ward 5</td>
+              <td>Etobicoke-Lakeshore (Ward 5)</td>
+              <td>80076.0</td>
+            </tr>
+            <tr>
+              <td>136806</td>
+              <td>Break and Enter</td>
+              <td>House</td>
+              <td>Tuesday</td>
+              <td>10</td>
+              <td>Ward 13</td>
+              <td>Parkdale-High Park (Ward 13)</td>
+              <td>81931.0</td>
+            </tr>
+            <tr>
+              <td>77301</td>
+              <td>Break and Enter</td>
+              <td>Commercial</td>
+              <td>Wednesday</td>
+              <td>20</td>
+              <td>Ward 5</td>
+              <td>Etobicoke-Lakeshore (Ward 5)</td>
+              <td>80076.0</td>
+            </tr>
+            <tr>
+              <td>78614</td>
+              <td>Break and Enter</td>
+              <td>Commercial</td>
+              <td>Saturday</td>
+              <td>5</td>
+              <td>Ward 22</td>
+              <td>St. Paul's (Ward 22)</td>
+              <td>76002.0</td>
+            </tr>
+            <tr>
+              <td>157199</td>
+              <td>Auto Theft</td>
+              <td>House</td>
+              <td>Friday</td>
+              <td>17</td>
+              <td>Ward 44</td>
+              <td>Scarborough East (Ward 44)</td>
+              <td>91360.0</td>
+            </tr>
+            <tr>
+              <td>6259</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Saturday</td>
+              <td>19</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>160859</td>
+              <td>Auto Theft</td>
+              <td>House</td>
+              <td>Sunday</td>
+              <td>20</td>
+              <td>Ward 5</td>
+              <td>Etobicoke-Lakeshore (Ward 5)</td>
+              <td>80076.0</td>
+            </tr>
+            <tr>
+              <td>15189</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Saturday</td>
+              <td>1</td>
+              <td>Ward 20</td>
+              <td>Trinity-Spadina (Ward 20)</td>
+              <td>69504.0</td>
+            </tr>
+            <tr>
+              <td>145760</td>
+              <td>Break and Enter</td>
+              <td>House</td>
+              <td>Sunday</td>
+              <td>2</td>
+              <td>Ward 18</td>
+              <td>Davenport (Ward 18)</td>
+              <td>61863.0</td>
+            </tr>
+            <tr>
+              <td>144731</td>
+              <td>Robbery</td>
+              <td>Other</td>
+              <td>Monday</td>
+              <td>16</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>124248</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Wednesday</td>
+              <td>13</td>
+              <td>Ward 34</td>
+              <td>Don Valley East (Ward 34)</td>
+              <td>61000.0</td>
+            </tr>
+            <tr>
+              <td>15658</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Thursday</td>
+              <td>12</td>
+              <td>Ward 2</td>
+              <td>Etobicoke North (Ward 2)</td>
+              <td>64543.0</td>
+            </tr>
+            <tr>
+              <td>102051</td>
+              <td>Robbery</td>
+              <td>Commercial</td>
+              <td>Wednesday</td>
+              <td>13</td>
+              <td>Ward 13</td>
+              <td>Parkdale-High Park (Ward 13)</td>
+              <td>81931.0</td>
+            </tr>
+            <tr>
+              <td>32995</td>
+              <td>Break and Enter</td>
+              <td>Commercial</td>
+              <td>Monday</td>
+              <td>20</td>
+              <td>Ward 8</td>
+              <td>York West (Ward 8)</td>
+              <td>48445.0</td>
+            </tr>
+            <tr>
+              <td>103944</td>
+              <td>Theft Over</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>1</td>
+              <td>Ward 31</td>
+              <td>Beaches-East York (Ward 31)</td>
+              <td>61575.0</td>
+            </tr>
+            <tr>
+              <td>83314</td>
+              <td>Break and Enter</td>
+              <td>House</td>
+              <td>Thursday</td>
+              <td>11</td>
+              <td>Ward 4</td>
+              <td>Etobicoke Centre (Ward 4)</td>
+              <td>78617.0</td>
+            </tr>
+            <tr>
+              <td>96445</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Wednesday</td>
+              <td>13</td>
+              <td>Ward 39</td>
+              <td>Scarborough-Agincourt (Ward 39)</td>
+              <td>62875.0</td>
+            </tr>
+            <tr>
+              <td>142977</td>
+              <td>Robbery</td>
+              <td>Other</td>
+              <td>Monday</td>
+              <td>16</td>
+              <td>Ward 35</td>
+              <td>Scarborough Southwest (Ward 35)</td>
+              <td>54317.0</td>
+            </tr>
+            <tr>
+              <td>34428</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Monday</td>
+              <td>8</td>
+              <td>Ward 2</td>
+              <td>Etobicoke North (Ward 2)</td>
+              <td>64543.0</td>
+            </tr>
+            <tr>
+              <td>60806</td>
+              <td>Robbery</td>
+              <td>Commercial</td>
+              <td>Saturday</td>
+              <td>9</td>
+              <td>Ward 9</td>
+              <td>York Centre (Ward 9)</td>
+              <td>56283.0</td>
+            </tr>
+            <tr>
+              <td>134204</td>
+              <td>Break and Enter</td>
+              <td>Other</td>
+              <td>Saturday</td>
+              <td>17</td>
+              <td>Ward 4</td>
+              <td>Etobicoke Centre (Ward 4)</td>
+              <td>78617.0</td>
+            </tr>
+            <tr>
+              <td>88921</td>
+              <td>Robbery</td>
+              <td>Outside</td>
+              <td>Thursday</td>
+              <td>19</td>
+              <td>Ward 42</td>
+              <td>Scarborough-Rouge River (Ward 42)</td>
+              <td>70764.0</td>
+            </tr>
+            <tr>
+              <td>82087</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Wednesday</td>
+              <td>17</td>
+              <td>Ward 31</td>
+              <td>Beaches-East York (Ward 31)</td>
+              <td>61575.0</td>
+            </tr>
+            <tr>
+              <td>164413</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Saturday</td>
+              <td>0</td>
+              <td>Ward 43</td>
+              <td>Scarborough East (Ward 43)</td>
+              <td>56856.0</td>
+            </tr>
+            <tr>
+              <td>81703</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>23</td>
+              <td>Ward 41</td>
+              <td>Scarborough-Rouge River (Ward 41)</td>
+              <td>66168.0</td>
+            </tr>
+            <tr>
+              <td>46838</td>
+              <td>Robbery</td>
+              <td>Other</td>
+              <td>Monday</td>
+              <td>16</td>
+              <td>Ward 35</td>
+              <td>Scarborough Southwest (Ward 35)</td>
+              <td>54317.0</td>
+            </tr>
+            <tr>
+              <td>35440</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Monday</td>
+              <td>14</td>
+              <td>Ward 7</td>
+              <td>York West (Ward 7)</td>
+              <td>59339.0</td>
+            </tr>
+            <tr>
+              <td>74870</td>
+              <td>Break and Enter</td>
+              <td>Apartment</td>
+              <td>Tuesday</td>
+              <td>7</td>
+              <td>Ward 2</td>
+              <td>Etobicoke North (Ward 2)</td>
+              <td>64543.0</td>
+            </tr>
+            <tr>
+              <td>89005</td>
+              <td>Break and Enter</td>
+              <td>Commercial</td>
+              <td>Sunday</td>
+              <td>9</td>
+              <td>Ward 20</td>
+              <td>Trinity-Spadina (Ward 20)</td>
+              <td>69504.0</td>
+            </tr>
+            <tr>
+              <td>39414</td>
+              <td>Robbery</td>
+              <td>Outside</td>
+              <td>Wednesday</td>
+              <td>19</td>
+              <td>Ward 38</td>
+              <td>Scarborough Centre (Ward 38)</td>
+              <td>58202.0</td>
+            </tr>
+            <tr>
+              <td>37117</td>
+              <td>Robbery</td>
+              <td>Commercial</td>
+              <td>Thursday</td>
+              <td>17</td>
+              <td>Ward 19</td>
+              <td>Trinity-Spadina (Ward 19)</td>
+              <td>75795.0</td>
+            </tr>
+            <tr>
+              <td>162264</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Sunday</td>
+              <td>15</td>
+              <td>Ward 31</td>
+              <td>Beaches-East York (Ward 31)</td>
+              <td>61575.0</td>
+            </tr>
+            <tr>
+              <td>91247</td>
+              <td>Break and Enter</td>
+              <td>Other</td>
+              <td>Monday</td>
+              <td>12</td>
+              <td>Ward 38</td>
+              <td>Scarborough Centre (Ward 38)</td>
+              <td>58202.0</td>
+            </tr>
+            <tr>
+              <td>24319</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Friday</td>
+              <td>23</td>
+              <td>Ward 11</td>
+              <td>York South-Weston (Ward 11)</td>
+              <td>53939.0</td>
+            </tr>
+            <tr>
+              <td>47378</td>
+              <td>Break and Enter</td>
+              <td>House</td>
+              <td>Saturday</td>
+              <td>19</td>
+              <td>Ward 25</td>
+              <td>Don Valley West (Ward 25)</td>
+              <td>98418.0</td>
+            </tr>
+            <tr>
+              <td>38062</td>
+              <td>Break and Enter</td>
+              <td>Apartment</td>
+              <td>Friday</td>
+              <td>8</td>
+              <td>Ward 19</td>
+              <td>Trinity-Spadina (Ward 19)</td>
+              <td>75795.0</td>
+            </tr>
+            <tr>
+              <td>50446</td>
+              <td>Assault</td>
+              <td>Commercial</td>
+              <td>Tuesday</td>
+              <td>22</td>
+              <td>Ward 15</td>
+              <td>Eglinton-Lawrence (Ward 15)</td>
+              <td>58180.0</td>
+            </tr>
+            <tr>
+              <td>95731</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Thursday</td>
+              <td>16</td>
+              <td>Ward 30</td>
+              <td>Toronto-Danforth (Ward 30)</td>
+              <td>75904.0</td>
+            </tr>
+            <tr>
+              <td>4045</td>
+              <td>Break and Enter</td>
+              <td>House</td>
+              <td>Tuesday</td>
+              <td>7</td>
+              <td>Ward 31</td>
+              <td>Beaches-East York (Ward 31)</td>
+              <td>61575.0</td>
+            </tr>
+            <tr>
+              <td>79094</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Wednesday</td>
+              <td>14</td>
+              <td>Ward 42</td>
+              <td>Scarborough-Rouge River (Ward 42)</td>
+              <td>70764.0</td>
+            </tr>
+            <tr>
+              <td>77929</td>
+              <td>Break and Enter</td>
+              <td>Apartment</td>
+              <td>Thursday</td>
+              <td>12</td>
+              <td>Ward 28</td>
+              <td>Toronto Centre-Rosedale (Ward 28)</td>
+              <td>58881.0</td>
+            </tr>
+            <tr>
+              <td>45821</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Wednesday</td>
+              <td>10</td>
+              <td>Ward 43</td>
+              <td>Scarborough East (Ward 43)</td>
+              <td>56856.0</td>
+            </tr>
+            <tr>
+              <td>8451</td>
+              <td>Robbery</td>
+              <td>Outside</td>
+              <td>Sunday</td>
+              <td>23</td>
+              <td>Ward 1</td>
+              <td>Etobicoke North (Ward 1)</td>
+              <td>60352.0</td>
+            </tr>
+            <tr>
+              <td>58524</td>
+              <td>Break and Enter</td>
+              <td>House</td>
+              <td>Sunday</td>
+              <td>9</td>
+              <td>Ward 37</td>
+              <td>Scarborough Centre (Ward 37)</td>
+              <td>60079.0</td>
+            </tr>
+            <tr>
+              <td>24219</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Monday</td>
+              <td>7</td>
+              <td>Ward 20</td>
+              <td>Trinity-Spadina (Ward 20)</td>
+              <td>69504.0</td>
+            </tr>
+            <tr>
+              <td>117946</td>
+              <td>Assault</td>
+              <td>Commercial</td>
+              <td>Sunday</td>
+              <td>21</td>
+              <td>Ward 19</td>
+              <td>Trinity-Spadina (Ward 19)</td>
+              <td>75795.0</td>
+            </tr>
+            <tr>
+              <td>68416</td>
+              <td>Robbery</td>
+              <td>Outside</td>
+              <td>Sunday</td>
+              <td>2</td>
+              <td>Ward 1</td>
+              <td>Etobicoke North (Ward 1)</td>
+              <td>60352.0</td>
+            </tr>
+            <tr>
+              <td>158550</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Saturday</td>
+              <td>19</td>
+              <td>Ward 44</td>
+              <td>Scarborough East (Ward 44)</td>
+              <td>91360.0</td>
+            </tr>
+            <tr>
+              <td>148925</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Thursday</td>
+              <td>15</td>
+              <td>Ward 9</td>
+              <td>York Centre (Ward 9)</td>
+              <td>56283.0</td>
+            </tr>
+            <tr>
+              <td>3608</td>
+              <td>Break and Enter</td>
+              <td>Commercial</td>
+              <td>Tuesday</td>
+              <td>8</td>
+              <td>Ward 28</td>
+              <td>Toronto Centre-Rosedale (Ward 28)</td>
+              <td>58881.0</td>
+            </tr>
+            <tr>
+              <td>50797</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Monday</td>
+              <td>23</td>
+              <td>Ward 13</td>
+              <td>Parkdale-High Park (Ward 13)</td>
+              <td>81931.0</td>
+            </tr>
+            <tr>
+              <td>64601</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Friday</td>
+              <td>11</td>
+              <td>Ward 37</td>
+              <td>Scarborough Centre (Ward 37)</td>
+              <td>60079.0</td>
+            </tr>
+            <tr>
+              <td>49640</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Thursday</td>
+              <td>10</td>
+              <td>Ward 42</td>
+              <td>Scarborough-Rouge River (Ward 42)</td>
+              <td>70764.0</td>
+            </tr>
+            <tr>
+              <td>136942</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Wednesday</td>
+              <td>2</td>
+              <td>Ward 22</td>
+              <td>St. Paul's (Ward 22)</td>
+              <td>76002.0</td>
+            </tr>
+            <tr>
+              <td>167005</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Thursday</td>
+              <td>17</td>
+              <td>Ward 38</td>
+              <td>Scarborough Centre (Ward 38)</td>
+              <td>58202.0</td>
+            </tr>
+            <tr>
+              <td>51119</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Monday</td>
+              <td>17</td>
+              <td>Ward 18</td>
+              <td>Davenport (Ward 18)</td>
+              <td>61863.0</td>
+            </tr>
+            <tr>
+              <td>116038</td>
+              <td>Break and Enter</td>
+              <td>House</td>
+              <td>Friday</td>
+              <td>18</td>
+              <td>Ward 31</td>
+              <td>Beaches-East York (Ward 31)</td>
+              <td>61575.0</td>
+            </tr>
+            <tr>
+              <td>3614</td>
+              <td>Robbery</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>20</td>
+              <td>Ward 12</td>
+              <td>York South-Weston (Ward 12)</td>
+              <td>52967.0</td>
+            </tr>
+            <tr>
+              <td>24206</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Tuesday</td>
+              <td>17</td>
+              <td>Ward 1</td>
+              <td>Etobicoke North (Ward 1)</td>
+              <td>60352.0</td>
+            </tr>
+            <tr>
+              <td>149119</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Thursday</td>
+              <td>2</td>
+              <td>Ward 32</td>
+              <td>Beaches-East York (Ward 32)</td>
+              <td>82966.0</td>
+            </tr>
+            <tr>
+              <td>13544</td>
+              <td>Assault</td>
+              <td>Commercial</td>
+              <td>Monday</td>
+              <td>14</td>
+              <td>Ward 30</td>
+              <td>Toronto-Danforth (Ward 30)</td>
+              <td>75904.0</td>
+            </tr>
+            <tr>
+              <td>39562</td>
+              <td>Theft Over</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>17</td>
+              <td>Ward 2</td>
+              <td>Etobicoke North (Ward 2)</td>
+              <td>64543.0</td>
+            </tr>
+            <tr>
+              <td>84644</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Sunday</td>
+              <td>21</td>
+              <td>Ward 43</td>
+              <td>Scarborough East (Ward 43)</td>
+              <td>56856.0</td>
+            </tr>
+            <tr>
+              <td>983</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Sunday</td>
+              <td>21</td>
+              <td>Ward 34</td>
+              <td>Don Valley East (Ward 34)</td>
+              <td>61000.0</td>
+            </tr>
+            <tr>
+              <td>158643</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Saturday</td>
+              <td>16</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>164670</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Monday</td>
+              <td>22</td>
+              <td>Ward 2</td>
+              <td>Etobicoke North (Ward 2)</td>
+              <td>64543.0</td>
+            </tr>
+            <tr>
+              <td>94863</td>
+              <td>Break and Enter</td>
+              <td>Commercial</td>
+              <td>Wednesday</td>
+              <td>18</td>
+              <td>Ward 35</td>
+              <td>Scarborough Southwest (Ward 35)</td>
+              <td>54317.0</td>
+            </tr>
+            <tr>
+              <td>39514</td>
+              <td>Break and Enter</td>
+              <td>Apartment</td>
+              <td>Wednesday</td>
+              <td>6</td>
+              <td>Ward 34</td>
+              <td>Don Valley East (Ward 34)</td>
+              <td>61000.0</td>
+            </tr>
+            <tr>
+              <td>24068</td>
+              <td>Break and Enter</td>
+              <td>Apartment</td>
+              <td>Tuesday</td>
+              <td>8</td>
+              <td>Ward 15</td>
+              <td>Eglinton-Lawrence (Ward 15)</td>
+              <td>58180.0</td>
+            </tr>
+            <tr>
+              <td>34563</td>
+              <td>Assault</td>
+              <td>Commercial</td>
+              <td>Tuesday</td>
+              <td>9</td>
+              <td>Ward 5</td>
+              <td>Etobicoke-Lakeshore (Ward 5)</td>
+              <td>80076.0</td>
+            </tr>
+            <tr>
+              <td>133484</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>21</td>
+              <td>Ward 26</td>
+              <td>Don Valley West (Ward 26)</td>
+              <td>59984.0</td>
+            </tr>
+            <tr>
+              <td>34640</td>
+              <td>Robbery</td>
+              <td>Outside</td>
+              <td>Friday</td>
+              <td>15</td>
+              <td>Ward 2</td>
+              <td>Etobicoke North (Ward 2)</td>
+              <td>64543.0</td>
+            </tr>
+            <tr>
+              <td>144686</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Friday</td>
+              <td>9</td>
+              <td>Ward 14</td>
+              <td>Parkdale-High Park (Ward 14)</td>
+              <td>52821.0</td>
+            </tr>
+            <tr>
+              <td>152179</td>
+              <td>Auto Theft</td>
+              <td>Commercial</td>
+              <td>Thursday</td>
+              <td>20</td>
+              <td>Ward 5</td>
+              <td>Etobicoke-Lakeshore (Ward 5)</td>
+              <td>80076.0</td>
+            </tr>
+            <tr>
+              <td>63570</td>
+              <td>Break and Enter</td>
+              <td>Commercial</td>
+              <td>Sunday</td>
+              <td>19</td>
+              <td>Ward 22</td>
+              <td>St. Paul's (Ward 22)</td>
+              <td>76002.0</td>
+            </tr>
+            <tr>
+              <td>50258</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Sunday</td>
+              <td>4</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>110152</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Friday</td>
+              <td>15</td>
+              <td>Ward 2</td>
+              <td>Etobicoke North (Ward 2)</td>
+              <td>64543.0</td>
+            </tr>
+            <tr>
+              <td>113255</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Thursday</td>
+              <td>22</td>
+              <td>Ward 4</td>
+              <td>Etobicoke Centre (Ward 4)</td>
+              <td>78617.0</td>
+            </tr>
+            <tr>
+              <td>97695</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Friday</td>
+              <td>1</td>
+              <td>Ward 14</td>
+              <td>Parkdale-High Park (Ward 14)</td>
+              <td>52821.0</td>
+            </tr>
+            <tr>
+              <td>82923</td>
+              <td>Break and Enter</td>
+              <td>Commercial</td>
+              <td>Tuesday</td>
+              <td>3</td>
+              <td>Ward 20</td>
+              <td>Trinity-Spadina (Ward 20)</td>
+              <td>69504.0</td>
+            </tr>
+            <tr>
+              <td>164846</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Monday</td>
+              <td>18</td>
+              <td>Ward 28</td>
+              <td>Toronto Centre-Rosedale (Ward 28)</td>
+              <td>58881.0</td>
+            </tr>
+            <tr>
+              <td>110376</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Saturday</td>
+              <td>13</td>
+              <td>Ward 28</td>
+              <td>Toronto Centre-Rosedale (Ward 28)</td>
+              <td>58881.0</td>
+            </tr>
+            <tr>
+              <td>102780</td>
+              <td>Break and Enter</td>
+              <td>House</td>
+              <td>Wednesday</td>
+              <td>23</td>
+              <td>Ward 11</td>
+              <td>York South-Weston (Ward 11)</td>
+              <td>53939.0</td>
+            </tr>
+            <tr>
+              <td>71645</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Sunday</td>
+              <td>14</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>17823</td>
+              <td>Break and Enter</td>
+              <td>Apartment</td>
+              <td>Tuesday</td>
+              <td>13</td>
+              <td>Ward 10</td>
+              <td>York Centre (Ward 10)</td>
+              <td>62210.0</td>
+            </tr>
+            <tr>
+              <td>48071</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Friday</td>
+              <td>18</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>69354</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Saturday</td>
+              <td>0</td>
+              <td>Ward 32</td>
+              <td>Beaches-East York (Ward 32)</td>
+              <td>82966.0</td>
+            </tr>
+            <tr>
+              <td>140387</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Wednesday</td>
+              <td>12</td>
+              <td>Ward 32</td>
+              <td>Beaches-East York (Ward 32)</td>
+              <td>82966.0</td>
+            </tr>
+            <tr>
+              <td>150249</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Sunday</td>
+              <td>9</td>
+              <td>Ward 2</td>
+              <td>Etobicoke North (Ward 2)</td>
+              <td>64543.0</td>
+            </tr>
+            <tr>
+              <td>37833</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Thursday</td>
+              <td>20</td>
+              <td>Ward 5</td>
+              <td>Etobicoke-Lakeshore (Ward 5)</td>
+              <td>80076.0</td>
+            </tr>
+            <tr>
+              <td>159805</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Monday</td>
+              <td>9</td>
+              <td>Ward 35</td>
+              <td>Scarborough Southwest (Ward 35)</td>
+              <td>54317.0</td>
+            </tr>
+            <tr>
+              <td>110693</td>
+              <td>Theft Over</td>
+              <td>Outside</td>
+              <td>Thursday</td>
+              <td>20</td>
+              <td>Ward 20</td>
+              <td>Trinity-Spadina (Ward 20)</td>
+              <td>69504.0</td>
+            </tr>
+            <tr>
+              <td>55215</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Thursday</td>
+              <td>15</td>
+              <td>Ward 37</td>
+              <td>Scarborough Centre (Ward 37)</td>
+              <td>60079.0</td>
+            </tr>
+            <tr>
+              <td>32</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Friday</td>
+              <td>17</td>
+              <td>Ward 37</td>
+              <td>Scarborough Centre (Ward 37)</td>
+              <td>60079.0</td>
+            </tr>
+            <tr>
+              <td>88773</td>
+              <td>Break and Enter</td>
+              <td>Apartment</td>
+              <td>Sunday</td>
+              <td>22</td>
+              <td>Ward 42</td>
+              <td>Scarborough-Rouge River (Ward 42)</td>
+              <td>70764.0</td>
+            </tr>
+            <tr>
+              <td>20245</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>20</td>
+              <td>Ward 8</td>
+              <td>York West (Ward 8)</td>
+              <td>48445.0</td>
+            </tr>
+            <tr>
+              <td>119990</td>
+              <td>Assault</td>
+              <td>Commercial</td>
+              <td>Tuesday</td>
+              <td>23</td>
+              <td>Ward 7</td>
+              <td>York West (Ward 7)</td>
+              <td>59339.0</td>
+            </tr>
+            <tr>
+              <td>111515</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Friday</td>
+              <td>13</td>
+              <td>Ward 2</td>
+              <td>Etobicoke North (Ward 2)</td>
+              <td>64543.0</td>
+            </tr>
+            <tr>
+              <td>37485</td>
+              <td>Robbery</td>
+              <td>Outside</td>
+              <td>Sunday</td>
+              <td>1</td>
+              <td>Ward 13</td>
+              <td>Parkdale-High Park (Ward 13)</td>
+              <td>81931.0</td>
+            </tr>
+            <tr>
+              <td>115827</td>
+              <td>Assault</td>
+              <td>Commercial</td>
+              <td>Saturday</td>
+              <td>13</td>
+              <td>Ward 37</td>
+              <td>Scarborough Centre (Ward 37)</td>
+              <td>60079.0</td>
+            </tr>
+            <tr>
+              <td>52077</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Friday</td>
+              <td>0</td>
+              <td>Ward 42</td>
+              <td>Scarborough-Rouge River (Ward 42)</td>
+              <td>70764.0</td>
+            </tr>
+            <tr>
+              <td>112749</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Wednesday</td>
+              <td>18</td>
+              <td>Ward 43</td>
+              <td>Scarborough East (Ward 43)</td>
+              <td>56856.0</td>
+            </tr>
+            <tr>
+              <td>167033</td>
+              <td>Auto Theft</td>
+              <td>House</td>
+              <td>Wednesday</td>
+              <td>21</td>
+              <td>Ward 30</td>
+              <td>Toronto-Danforth (Ward 30)</td>
+              <td>75904.0</td>
+            </tr>
+            <tr>
+              <td>105311</td>
+              <td>Assault</td>
+              <td>Commercial</td>
+              <td>Friday</td>
+              <td>2</td>
+              <td>Ward 22</td>
+              <td>St. Paul's (Ward 22)</td>
+              <td>76002.0</td>
+            </tr>
+            <tr>
+              <td>136427</td>
+              <td>Assault</td>
+              <td>Commercial</td>
+              <td>Tuesday</td>
+              <td>20</td>
+              <td>Ward 28</td>
+              <td>Toronto Centre-Rosedale (Ward 28)</td>
+              <td>58881.0</td>
+            </tr>
+            <tr>
+              <td>149196</td>
+              <td>Break and Enter</td>
+              <td>Commercial</td>
+              <td>Sunday</td>
+              <td>2</td>
+              <td>Ward 30</td>
+              <td>Toronto-Danforth (Ward 30)</td>
+              <td>75904.0</td>
+            </tr>
+            <tr>
+              <td>127909</td>
+              <td>Robbery</td>
+              <td>Commercial</td>
+              <td>Saturday</td>
+              <td>20</td>
+              <td>Ward 17</td>
+              <td>Davenport (Ward 17)</td>
+              <td>67701.0</td>
+            </tr>
+            <tr>
+              <td>51710</td>
+              <td>Break and Enter</td>
+              <td>Apartment</td>
+              <td>Sunday</td>
+              <td>22</td>
+              <td>Ward 18</td>
+              <td>Davenport (Ward 18)</td>
+              <td>61863.0</td>
+            </tr>
+            <tr>
+              <td>108580</td>
+              <td>Robbery</td>
+              <td>Commercial</td>
+              <td>Thursday</td>
+              <td>3</td>
+              <td>Ward 7</td>
+              <td>York West (Ward 7)</td>
+              <td>59339.0</td>
+            </tr>
+            <tr>
+              <td>124460</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Thursday</td>
+              <td>14</td>
+              <td>Ward 32</td>
+              <td>Beaches-East York (Ward 32)</td>
+              <td>82966.0</td>
+            </tr>
+            <tr>
+              <td>64712</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Saturday</td>
+              <td>12</td>
+              <td>Ward 9</td>
+              <td>York Centre (Ward 9)</td>
+              <td>56283.0</td>
+            </tr>
+            <tr>
+              <td>80454</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Saturday</td>
+              <td>1</td>
+              <td>Ward 31</td>
+              <td>Beaches-East York (Ward 31)</td>
+              <td>61575.0</td>
+            </tr>
+            <tr>
+              <td>69320</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>18</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>99281</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Monday</td>
+              <td>0</td>
+              <td>Ward 36</td>
+              <td>Scarborough Southwest (Ward 36)</td>
+              <td>64909.0</td>
+            </tr>
+            <tr>
+              <td>12465</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Sunday</td>
+              <td>16</td>
+              <td>Ward 11</td>
+              <td>York South-Weston (Ward 11)</td>
+              <td>53939.0</td>
+            </tr>
+            <tr>
+              <td>140272</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Wednesday</td>
+              <td>20</td>
+              <td>Ward 28</td>
+              <td>Toronto Centre-Rosedale (Ward 28)</td>
+              <td>58881.0</td>
+            </tr>
+            <tr>
+              <td>139274</td>
+              <td>Robbery</td>
+              <td>Commercial</td>
+              <td>Monday</td>
+              <td>15</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>78001</td>
+              <td>Robbery</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>0</td>
+              <td>Ward 7</td>
+              <td>York West (Ward 7)</td>
+              <td>59339.0</td>
+            </tr>
+            <tr>
+              <td>38617</td>
+              <td>Robbery</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>22</td>
+              <td>Ward 37</td>
+              <td>Scarborough Centre (Ward 37)</td>
+              <td>60079.0</td>
+            </tr>
+            <tr>
+              <td>98193</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Tuesday</td>
+              <td>22</td>
+              <td>Ward 21</td>
+              <td>St. Paul's (Ward 21)</td>
+              <td>70815.0</td>
+            </tr>
+            <tr>
+              <td>137319</td>
+              <td>Assault</td>
+              <td>Commercial</td>
+              <td>Saturday</td>
+              <td>15</td>
+              <td>Ward 5</td>
+              <td>Etobicoke-Lakeshore (Ward 5)</td>
+              <td>80076.0</td>
+            </tr>
+            <tr>
+              <td>88451</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>18</td>
+              <td>Ward 8</td>
+              <td>York West (Ward 8)</td>
+              <td>48445.0</td>
+            </tr>
+            <tr>
+              <td>72846</td>
+              <td>Break and Enter</td>
+              <td>House</td>
+              <td>Friday</td>
+              <td>21</td>
+              <td>Ward 25</td>
+              <td>Don Valley West (Ward 25)</td>
+              <td>98418.0</td>
+            </tr>
+            <tr>
+              <td>71368</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Friday</td>
+              <td>21</td>
+              <td>Ward 38</td>
+              <td>Scarborough Centre (Ward 38)</td>
+              <td>58202.0</td>
+            </tr>
+            <tr>
+              <td>119590</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Wednesday</td>
+              <td>8</td>
+              <td>Ward 28</td>
+              <td>Toronto Centre-Rosedale (Ward 28)</td>
+              <td>58881.0</td>
+            </tr>
+            <tr>
+              <td>137841</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Friday</td>
+              <td>16</td>
+              <td>Ward 36</td>
+              <td>Scarborough Southwest (Ward 36)</td>
+              <td>64909.0</td>
+            </tr>
+            <tr>
+              <td>61868</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Tuesday</td>
+              <td>20</td>
+              <td>Ward 22</td>
+              <td>St. Paul's (Ward 22)</td>
+              <td>76002.0</td>
+            </tr>
+            <tr>
+              <td>103115</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Friday</td>
+              <td>0</td>
+              <td>Ward 20</td>
+              <td>Trinity-Spadina (Ward 20)</td>
+              <td>69504.0</td>
+            </tr>
+            <tr>
+              <td>136669</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Tuesday</td>
+              <td>14</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>145377</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Friday</td>
+              <td>17</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>50444</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Friday</td>
+              <td>20</td>
+              <td>Ward 20</td>
+              <td>Trinity-Spadina (Ward 20)</td>
+              <td>69504.0</td>
+            </tr>
+            <tr>
+              <td>18913</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Friday</td>
+              <td>14</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>57530</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Saturday</td>
+              <td>23</td>
+              <td>Ward 20</td>
+              <td>Trinity-Spadina (Ward 20)</td>
+              <td>69504.0</td>
+            </tr>
+            <tr>
+              <td>129175</td>
+              <td>Break and Enter</td>
+              <td>Apartment</td>
+              <td>Friday</td>
+              <td>18</td>
+              <td>Ward 12</td>
+              <td>York South-Weston (Ward 12)</td>
+              <td>52967.0</td>
+            </tr>
+            <tr>
+              <td>53686</td>
+              <td>Robbery</td>
+              <td>Other</td>
+              <td>Saturday</td>
+              <td>0</td>
+              <td>Ward 18</td>
+              <td>Davenport (Ward 18)</td>
+              <td>61863.0</td>
+            </tr>
+            <tr>
+              <td>40292</td>
+              <td>Robbery</td>
+              <td>Outside</td>
+              <td>Thursday</td>
+              <td>23</td>
+              <td>Ward 30</td>
+              <td>Toronto-Danforth (Ward 30)</td>
+              <td>75904.0</td>
+            </tr>
+            <tr>
+              <td>49998</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Monday</td>
+              <td>12</td>
+              <td>Ward 12</td>
+              <td>York South-Weston (Ward 12)</td>
+              <td>52967.0</td>
+            </tr>
+            <tr>
+              <td>8741</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Saturday</td>
+              <td>15</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>166250</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Friday</td>
+              <td>17</td>
+              <td>Ward 4</td>
+              <td>Etobicoke Centre (Ward 4)</td>
+              <td>78617.0</td>
+            </tr>
+            <tr>
+              <td>57463</td>
+              <td>Robbery</td>
+              <td>Apartment</td>
+              <td>Tuesday</td>
+              <td>0</td>
+              <td>Ward 8</td>
+              <td>York West (Ward 8)</td>
+              <td>48445.0</td>
+            </tr>
+            <tr>
+              <td>163212</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Monday</td>
+              <td>13</td>
+              <td>Ward 19</td>
+              <td>Trinity-Spadina (Ward 19)</td>
+              <td>75795.0</td>
+            </tr>
+            <tr>
+              <td>40559</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Thursday</td>
+              <td>17</td>
+              <td>Ward 30</td>
+              <td>Toronto-Danforth (Ward 30)</td>
+              <td>75904.0</td>
+            </tr>
+            <tr>
+              <td>72566</td>
+              <td>Robbery</td>
+              <td>Commercial</td>
+              <td>Thursday</td>
+              <td>7</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>1811</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Sunday</td>
+              <td>16</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>91523</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Tuesday</td>
+              <td>23</td>
+              <td>Ward 35</td>
+              <td>Scarborough Southwest (Ward 35)</td>
+              <td>54317.0</td>
+            </tr>
+            <tr>
+              <td>127571</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>23</td>
+              <td>Ward 1</td>
+              <td>Etobicoke North (Ward 1)</td>
+              <td>60352.0</td>
+            </tr>
+            <tr>
+              <td>26446</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Sunday</td>
+              <td>20</td>
+              <td>Ward 38</td>
+              <td>Scarborough Centre (Ward 38)</td>
+              <td>58202.0</td>
+            </tr>
+            <tr>
+              <td>87881</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Sunday</td>
+              <td>16</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>52065</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Saturday</td>
+              <td>9</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>160444</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>2</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>148355</td>
+              <td>Break and Enter</td>
+              <td>House</td>
+              <td>Tuesday</td>
+              <td>16</td>
+              <td>Ward 42</td>
+              <td>Scarborough-Rouge River (Ward 42)</td>
+              <td>70764.0</td>
+            </tr>
+            <tr>
+              <td>139343</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Sunday</td>
+              <td>5</td>
+              <td>Ward 12</td>
+              <td>York South-Weston (Ward 12)</td>
+              <td>52967.0</td>
+            </tr>
+            <tr>
+              <td>4762</td>
+              <td>Assault</td>
+              <td>Apartment</td>
+              <td>Thursday</td>
+              <td>6</td>
+              <td>Ward 2</td>
+              <td>Etobicoke North (Ward 2)</td>
+              <td>64543.0</td>
+            </tr>
+            <tr>
+              <td>78060</td>
+              <td>Robbery</td>
+              <td>Outside</td>
+              <td>Thursday</td>
+              <td>21</td>
+              <td>Ward 15</td>
+              <td>Eglinton-Lawrence (Ward 15)</td>
+              <td>58180.0</td>
+            </tr>
+            <tr>
+              <td>130793</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Thursday</td>
+              <td>15</td>
+              <td>Ward 9</td>
+              <td>York Centre (Ward 9)</td>
+              <td>56283.0</td>
+            </tr>
+            <tr>
+              <td>74797</td>
+              <td>Theft Over</td>
+              <td>Commercial</td>
+              <td>Wednesday</td>
+              <td>12</td>
+              <td>Ward 7</td>
+              <td>York West (Ward 7)</td>
+              <td>59339.0</td>
+            </tr>
+            <tr>
+              <td>130493</td>
+              <td>Break and Enter</td>
+              <td>Apartment</td>
+              <td>Thursday</td>
+              <td>1</td>
+              <td>Ward 5</td>
+              <td>Etobicoke-Lakeshore (Ward 5)</td>
+              <td>80076.0</td>
+            </tr>
+            <tr>
+              <td>165929</td>
+              <td>Auto Theft</td>
+              <td>House</td>
+              <td>Thursday</td>
+              <td>3</td>
+              <td>Ward 2</td>
+              <td>Etobicoke North (Ward 2)</td>
+              <td>64543.0</td>
+            </tr>
+            <tr>
+              <td>50326</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Thursday</td>
+              <td>23</td>
+              <td>Ward 44</td>
+              <td>Scarborough East (Ward 44)</td>
+              <td>91360.0</td>
+            </tr>
+            <tr>
+              <td>53316</td>
+              <td>Assault</td>
+              <td>Other</td>
+              <td>Wednesday</td>
+              <td>19</td>
+              <td>Ward 38</td>
+              <td>Scarborough Centre (Ward 38)</td>
+              <td>58202.0</td>
+            </tr>
+            <tr>
+              <td>29328</td>
+              <td>Break and Enter</td>
+              <td>Other</td>
+              <td>Friday</td>
+              <td>23</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>162743</td>
+              <td>Auto Theft</td>
+              <td>Outside</td>
+              <td>Friday</td>
+              <td>14</td>
+              <td>Ward 34</td>
+              <td>Don Valley East (Ward 34)</td>
+              <td>61000.0</td>
+            </tr>
+            <tr>
+              <td>45653</td>
+              <td>Assault</td>
+              <td>Outside</td>
+              <td>Tuesday</td>
+              <td>4</td>
+              <td>Ward 35</td>
+              <td>Scarborough Southwest (Ward 35)</td>
+              <td>54317.0</td>
+            </tr>
+            <tr>
+              <td>37190</td>
+              <td>Break and Enter</td>
+              <td>Commercial</td>
+              <td>Friday</td>
+              <td>21</td>
+              <td>Ward 27</td>
+              <td>Toronto Centre-Rosedale (Ward 27)</td>
+              <td>59430.0</td>
+            </tr>
+            <tr>
+              <td>97365</td>
+              <td>Break and Enter</td>
+              <td>House</td>
+              <td>Friday</td>
+              <td>23</td>
+              <td>Ward 6</td>
+              <td>Etobicoke-Lakeshore (Ward 6)</td>
+              <td>66350.0</td>
+            </tr>
+            <tr>
+              <td>53921</td>
+              <td>Assault</td>
+              <td>House</td>
+              <td>Monday</td>
+              <td>7</td>
+              <td>Ward 19</td>
+              <td>Trinity-Spadina (Ward 19)</td>
+              <td>75795.0</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+  <div class="tab-pane fade" id="nav-household" role="tabpanel" aria-labelledby="nav-household-tab">
+    <table class="table table-striped">
+    <thead>
+      <tr style="text-align: left;">
+        <th>Median Income</th>
+        <th>Assault</th>
+        <th>Auto Theft</th>
+        <th>Break and Enter</th>
+        <th>Robbery</th>
+        <th>Theft Over</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>48445.0</th>
+        <td>2856</td>
+        <td>665</td>
+        <td>621</td>
+        <td>619</td>
+        <td>185</td>
+      </tr>
+      <tr>
+        <th>52821.0</th>
+        <td>2090</td>
+        <td>211</td>
+        <td>733</td>
+        <td>360</td>
+        <td>79</td>
+      </tr>
+      <tr>
+        <th>52967.0</th>
+        <td>1602</td>
+        <td>445</td>
+        <td>496</td>
+        <td>396</td>
+        <td>72</td>
+      </tr>
+      <tr>
+        <th>53939.0</th>
+        <td>2323</td>
+        <td>695</td>
+        <td>650</td>
+        <td>583</td>
+        <td>97</td>
+      </tr>
+      <tr>
+        <th>54317.0</th>
+        <td>3868</td>
+        <td>464</td>
+        <td>1199</td>
+        <td>768</td>
+        <td>141</td>
+      </tr>
+      <tr>
+        <th>56283.0</th>
+        <td>1853</td>
+        <td>483</td>
+        <td>374</td>
+        <td>314</td>
+        <td>79</td>
+      </tr>
+      <tr>
+        <th>56856.0</th>
+        <td>2861</td>
+        <td>219</td>
+        <td>556</td>
+        <td>449</td>
+        <td>46</td>
+      </tr>
+      <tr>
+        <th>57626.0</th>
+        <td>1338</td>
+        <td>316</td>
+        <td>690</td>
+        <td>303</td>
+        <td>83</td>
+      </tr>
+      <tr>
+        <th>58180.0</th>
+        <td>1985</td>
+        <td>541</td>
+        <td>770</td>
+        <td>441</td>
+        <td>159</td>
+      </tr>
+      <tr>
+        <th>58202.0</th>
+        <td>2543</td>
+        <td>353</td>
+        <td>702</td>
+        <td>618</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <th>58881.0</th>
+        <td>5094</td>
+        <td>354</td>
+        <td>1741</td>
+        <td>858</td>
+        <td>331</td>
+      </tr>
+      <tr>
+        <th>59339.0</th>
+        <td>2659</td>
+        <td>1031</td>
+        <td>649</td>
+        <td>537</td>
+        <td>182</td>
+      </tr>
+      <tr>
+        <th>59430.0</th>
+        <td>7150</td>
+        <td>405</td>
+        <td>1971</td>
+        <td>1561</td>
+        <td>410</td>
+      </tr>
+      <tr>
+        <th>59984.0</th>
+        <td>1485</td>
+        <td>181</td>
+        <td>479</td>
+        <td>223</td>
+        <td>103</td>
+      </tr>
+      <tr>
+        <th>60079.0</th>
+        <td>2220</td>
+        <td>519</td>
+        <td>999</td>
+        <td>472</td>
+        <td>105</td>
+      </tr>
+      <tr>
+        <th>60352.0</th>
+        <td>2272</td>
+        <td>890</td>
+        <td>552</td>
+        <td>791</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <th>61000.0</th>
+        <td>1508</td>
+        <td>261</td>
+        <td>564</td>
+        <td>237</td>
+        <td>82</td>
+      </tr>
+      <tr>
+        <th>61575.0</th>
+        <td>1631</td>
+        <td>137</td>
+        <td>579</td>
+        <td>269</td>
+        <td>70</td>
+      </tr>
+      <tr>
+        <th>61863.0</th>
+        <td>1748</td>
+        <td>218</td>
+        <td>653</td>
+        <td>321</td>
+        <td>79</td>
+      </tr>
+      <tr>
+        <th>62210.0</th>
+        <td>1356</td>
+        <td>544</td>
+        <td>819</td>
+        <td>180</td>
+        <td>109</td>
+      </tr>
+      <tr>
+        <th>62640.0</th>
+        <td>2011</td>
+        <td>385</td>
+        <td>923</td>
+        <td>452</td>
+        <td>148</td>
+      </tr>
+      <tr>
+        <th>62875.0</th>
+        <td>676</td>
+        <td>220</td>
+        <td>535</td>
+        <td>221</td>
+        <td>53</td>
+      </tr>
+      <tr>
+        <th>63879.0</th>
+        <td>1452</td>
+        <td>300</td>
+        <td>562</td>
+        <td>272</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <th>64543.0</th>
+        <td>1663</td>
+        <td>1578</td>
+        <td>676</td>
+        <td>404</td>
+        <td>210</td>
+      </tr>
+      <tr>
+        <th>64909.0</th>
+        <td>2106</td>
+        <td>237</td>
+        <td>797</td>
+        <td>331</td>
+        <td>61</td>
+      </tr>
+      <tr>
+        <th>65610.0</th>
+        <td>1138</td>
+        <td>129</td>
+        <td>410</td>
+        <td>185</td>
+        <td>32</td>
+      </tr>
+      <tr>
+        <th>66168.0</th>
+        <td>1026</td>
+        <td>450</td>
+        <td>1005</td>
+        <td>368</td>
+        <td>123</td>
+      </tr>
+      <tr>
+        <th>66350.0</th>
+        <td>2421</td>
+        <td>364</td>
+        <td>713</td>
+        <td>284</td>
+        <td>129</td>
+      </tr>
+      <tr>
+        <th>67701.0</th>
+        <td>1586</td>
+        <td>257</td>
+        <td>439</td>
+        <td>343</td>
+        <td>62</td>
+      </tr>
+      <tr>
+        <th>67909.0</th>
+        <td>1170</td>
+        <td>345</td>
+        <td>750</td>
+        <td>170</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <th>69504.0</th>
+        <td>6900</td>
+        <td>475</td>
+        <td>2256</td>
+        <td>998</td>
+        <td>423</td>
+      </tr>
+      <tr>
+        <th>70764.0</th>
+        <td>1992</td>
+        <td>382</td>
+        <td>513</td>
+        <td>380</td>
+        <td>101</td>
+      </tr>
+      <tr>
+        <th>70815.0</th>
+        <td>835</td>
+        <td>255</td>
+        <td>655</td>
+        <td>154</td>
+        <td>82</td>
+      </tr>
+      <tr>
+        <th>75795.0</th>
+        <td>2602</td>
+        <td>307</td>
+        <td>1072</td>
+        <td>417</td>
+        <td>160</td>
+      </tr>
+      <tr>
+        <th>75904.0</th>
+        <td>2195</td>
+        <td>268</td>
+        <td>1000</td>
+        <td>543</td>
+        <td>147</td>
+      </tr>
+      <tr>
+        <th>76002.0</th>
+        <td>1208</td>
+        <td>155</td>
+        <td>743</td>
+        <td>222</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <th>78617.0</th>
+        <td>1037</td>
+        <td>599</td>
+        <td>705</td>
+        <td>267</td>
+        <td>72</td>
+      </tr>
+      <tr>
+        <th>80076.0</th>
+        <td>1502</td>
+        <td>761</td>
+        <td>894</td>
+        <td>362</td>
+        <td>249</td>
+      </tr>
+      <tr>
+        <th>81839.0</th>
+        <td>845</td>
+        <td>332</td>
+        <td>454</td>
+        <td>199</td>
+        <td>51</td>
+      </tr>
+      <tr>
+        <th>81931.0</th>
+        <td>1093</td>
+        <td>263</td>
+        <td>561</td>
+        <td>313</td>
+        <td>53</td>
+      </tr>
+      <tr>
+        <th>82966.0</th>
+        <td>2267</td>
+        <td>285</td>
+        <td>1017</td>
+        <td>443</td>
+        <td>126</td>
+      </tr>
+      <tr>
+        <th>91360.0</th>
+        <td>1548</td>
+        <td>245</td>
+        <td>615</td>
+        <td>296</td>
+        <td>54</td>
+      </tr>
+      <tr>
+        <th>98418.0</th>
+        <td>687</td>
+        <td>240</td>
+        <td>1049</td>
+        <td>85</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <th>112882.0</th>
+        <td>476</td>
+        <td>413</td>
+        <td>770</td>
+        <td>119</td>
+        <td>86</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <div class="tab-pane fade" id="nav-dow" role="tabpanel" aria-labelledby="nav-day-of-week-tab">
+      <table class="table table-striped">
+          <thead>
+            <tr style="text-align: left;">
+              <th>Day of Week</th>
+              <th>Assault</th>
+              <th>Auto Theft</th>
+              <th>Break and Enter</th>
+              <th>Robbery</th>
+              <th>Theft Over</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <th>Sunday</th>
+                  <td>14705</td>
+                  <td>2383</td>
+                  <td>4096</td>
+                  <td>2475</td>
+                  <td>634</td>
+                </tr>
+            <tr>
+              <th>Monday</th>
+              <td>12287</td>
+              <td>2546</td>
+              <td>5030</td>
+              <td>2451</td>
+              <td>779</td>
+            </tr>
+            <tr>
+                <th>Tuesday</th>
+                <td>11828</td>
+                <td>2575</td>
+                <td>5057</td>
+                <td>2534</td>
+                <td>787</td>
+              </tr>
+              <tr>
+                <th>Wednesday</th>
+                <td>12340</td>
+                <td>2575</td>
+                <td>5021</td>
+                <td>2544</td>
+                <td>786</td>
+              </tr>
+            <tr>
+              <th>Thursday</th>
+              <td>12196</td>
+              <td>2666</td>
+              <td>5265</td>
+              <td>2519</td>
+              <td>805</td>
+            </tr>
+            <tr>
+                <th>Friday</th>
+                <td>12980</td>
+                <td>2807</td>
+                <td>5902</td>
+                <td>2832</td>
+                <td>930</td>
+              </tr>
+              <tr>
+                  <th>Saturday</th>
+                  <td>14542</td>
+                  <td>2625</td>
+                  <td>4540</td>
+                  <td>2773</td>
+                  <td>709</td>
+                </tr>
+            </tbody>
+        </table>
+  </div>
+  <div class="tab-pane fade" id="nav-tod" role="tabpanel" aria-labelledby="nav-time-of-day-tab">
+      <table class="table table-striped">
+          <thead>
+            <tr style="text-align: left;">
+              <th>Time of Day</th>
+              <th>Assault</th>
+              <th>Auto Theft</th>
+              <th>Break and Enter</th>
+              <th>Robbery</th>
+              <th>Theft Over</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td>5799</td>
+              <td>1185</td>
+              <td>2331</td>
+              <td>997</td>
+              <td>586</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>4133</td>
+              <td>552</td>
+              <td>1383</td>
+              <td>957</td>
+              <td>116</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>4506</td>
+              <td>420</td>
+              <td>1405</td>
+              <td>833</td>
+              <td>79</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>2836</td>
+              <td>307</td>
+              <td>1515</td>
+              <td>680</td>
+              <td>68</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td>1719</td>
+              <td>259</td>
+              <td>1457</td>
+              <td>421</td>
+              <td>59</td>
+            </tr>
+            <tr>
+              <th>5</th>
+              <td>1230</td>
+              <td>283</td>
+              <td>1147</td>
+              <td>252</td>
+              <td>47</td>
+            </tr>
+            <tr>
+              <th>6</th>
+              <td>1208</td>
+              <td>338</td>
+              <td>899</td>
+              <td>226</td>
+              <td>61</td>
+            </tr>
+            <tr>
+              <th>7</th>
+              <td>1646</td>
+              <td>479</td>
+              <td>1064</td>
+              <td>160</td>
+              <td>102</td>
+            </tr>
+            <tr>
+              <th>8</th>
+              <td>2532</td>
+              <td>521</td>
+              <td>1659</td>
+              <td>202</td>
+              <td>151</td>
+            </tr>
+            <tr>
+              <th>9</th>
+              <td>3066</td>
+              <td>549</td>
+              <td>1677</td>
+              <td>250</td>
+              <td>293</td>
+            </tr>
+            <tr>
+              <th>10</th>
+              <td>3167</td>
+              <td>481</td>
+              <td>1539</td>
+              <td>366</td>
+              <td>203</td>
+            </tr>
+            <tr>
+              <th>11</th>
+              <td>3550</td>
+              <td>420</td>
+              <td>1470</td>
+              <td>510</td>
+              <td>182</td>
+            </tr>
+            <tr>
+              <th>12</th>
+              <td>5154</td>
+              <td>775</td>
+              <td>2152</td>
+              <td>730</td>
+              <td>594</td>
+            </tr>
+            <tr>
+              <th>13</th>
+              <td>3796</td>
+              <td>489</td>
+              <td>1499</td>
+              <td>614</td>
+              <td>231</td>
+            </tr>
+            <tr>
+              <th>14</th>
+              <td>4012</td>
+              <td>553</td>
+              <td>1501</td>
+              <td>763</td>
+              <td>291</td>
+            </tr>
+            <tr>
+              <th>15</th>
+              <td>4970</td>
+              <td>574</td>
+              <td>1335</td>
+              <td>1143</td>
+              <td>292</td>
+            </tr>
+            <tr>
+              <th>16</th>
+              <td>4625</td>
+              <td>744</td>
+              <td>1323</td>
+              <td>1042</td>
+              <td>293</td>
+            </tr>
+            <tr>
+              <th>17</th>
+              <td>4662</td>
+              <td>924</td>
+              <td>1527</td>
+              <td>920</td>
+              <td>338</td>
+            </tr>
+            <tr>
+              <th>18</th>
+              <td>4903</td>
+              <td>1155</td>
+              <td>1669</td>
+              <td>992</td>
+              <td>326</td>
+            </tr>
+            <tr>
+              <th>19</th>
+              <td>4655</td>
+              <td>1198</td>
+              <td>1429</td>
+              <td>1103</td>
+              <td>259</td>
+            </tr>
+            <tr>
+              <th>20</th>
+              <td>4811</td>
+              <td>1360</td>
+              <td>1261</td>
+              <td>1226</td>
+              <td>247</td>
+            </tr>
+            <tr>
+              <th>21</th>
+              <td>4755</td>
+              <td>1470</td>
+              <td>1257</td>
+              <td>1339</td>
+              <td>219</td>
+            </tr>
+            <tr>
+              <th>22</th>
+              <td>4595</td>
+              <td>1684</td>
+              <td>1157</td>
+              <td>1237</td>
+              <td>204</td>
+            </tr>
+            <tr>
+              <th>23</th>
+              <td>4548</td>
+              <td>1457</td>
+              <td>1255</td>
+              <td>1165</td>
+              <td>189</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+  <div class="tab-pane fade" id="nav-premise" role="tabpanel" aria-labelledby="nav-premise-tab">
+      <table class="table table-striped">
+          <thead>
+            <tr style="text-align: left;">
+              <th>Premise Type</th>
+              <th>Assault</th>
+              <th>Auto Theft</th>
+              <th>Break and Enter</th>
+              <th>Robbery</th>
+              <th>Theft Over</th>
+            </tr>
+            <tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Apartment</th>
+              <td>28491</td>
+              <td>395</td>
+              <td>9238</td>
+              <td>1642</td>
+              <td>823</td>
+            </tr>
+            <tr>
+              <th>Commercial</th>
+              <td>14237</td>
+              <td>1815</td>
+              <td>10428</td>
+              <td>4184</td>
+              <td>1878</td>
+            </tr>
+            <tr>
+              <th>House</th>
+              <td>11642</td>
+              <td>4981</td>
+              <td>13156</td>
+              <td>526</td>
+              <td>965</td>
+            </tr>
+            <tr>
+              <th>Other</th>
+              <td>14186</td>
+              <td>480</td>
+              <td>2078</td>
+              <td>1471</td>
+              <td>413</td>
+            </tr>
+            <tr>
+              <th>Outside</th>
+              <td>22322</td>
+              <td>10506</td>
+              <td>11</td>
+              <td>10305</td>
+              <td>1351</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>
+
+
+
+</body>
+</html>

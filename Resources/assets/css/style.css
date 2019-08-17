@@ -1,10 +1,27 @@
-.box {
-  height: 400px;
-  padding: 20px;
-  color: #fff;
-  background: blueviolet;
+body{
+  background-color: lightgrey;
 }
 
-.margin-top-80 {
-  margin-top: 80px;
+hr{
+  border-color: #5a5a5a
+}
+
+h1, h2, h3{
+  color: teal;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.data_table{
+  background-color: white;
+}
+
+.navbar-custom {
+  background-color: teal;
+}
+
+.navbar-light .nav-item.active .nav-link,
+.navbar-light .nav-item:focus .nav-link,
+.navbar-light .nav-item:hover .nav-link {
+        background-color: teal;
 }

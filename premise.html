@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Resources/assets/css/style.css">
-    <title>Summary: MCI vs. X</title>
+    <title>Premise Type</title>
     <link rel="shortcut icon" href="Resources/assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="Resources/assets/images/favicon.ico" type="image/x-icon">
   </head>
@@ -55,18 +55,17 @@
 
         <!-- summary -->
         <div class="col-lg-7">
-          <h1 class="mb-2">Summary: MCI vs. X</h1>
-          <hr class="mr-2">
-          <img class="p-3" src="Resources/assets/images/mci.png" alt="vs. household median income" height="320" width="390" align="left">
-          <p class="pt-1 mr-1">This project's purpose is to show if there is a relationship between Major Crime Indicators (MCI) and four factors: household median income, day of week, time of day and premise type. The MCI data was pulled from the Toronto Police Service's Public Data Portal, crossed referenced with the Boundaries Civic Information API to obtain the Ward number (based on the latitude and longitude of the incident happened) and the City of Toronto Open Data Catalog (used for obtaining the household median income for each ward). All 167k crime occurrences from 2014 to 2018 were used for this dataset. Matplotlib was used to make the line plots, which show the relationship between MCI and the four factors. </p>
-          <p class="pl-1 mr-1">The data used for this analysis is representative of Major Crime Indicators in the city of Toronto from 2014 to 2018. A longer historical snapshot of data may offer more accurate insight. This sites contain visualizations, analysis, 0.1% of the data source, pivoted dataframes used for calculating the Anova test for each category (household median income, day of the week, time of the day and premise type).</p>
+          <h1 class="mb-4">Premise Type</h1>
+          <hr class="mr-4">
+          <img class="mb-2 mr-4 pr-5 img-fluid" src="Resources/assets/images/premise.png" alt="vs. premise type">
+          <p class="pt-3 mr-4">The source data was grouped by MCI and the premise type to count the number of crimes for these 2 dimensions. The resulting dataframe was pivoted by the MCI to obtain a new dataframe with 5 rows (one for each premise type) and 5 columns (one for each MCI). The pivoted dataframe was used to perform the Anova test which yielded a pvalue = 0.8693059740668914 by which we can conclude that there is no significant statistical difference between the median of crime occurrences across the premise type.</p>
+
         </div><!-- /summary -->
                 
         <!-- visualizations -->
         <div class="card col-lg ml-3">
           <h3 class="pb-4">Visualizations</h3> 
           <div class="row justify-content-center">
-            
             <div class="col-lg-5 col-sm-3">
               <div class="card mb-3">
                 <a href="median.html" >
@@ -113,22 +112,7 @@
           </div>
         </div><!-- /visualizations -->
       </div><!-- /row -->
-    </div><!-- /container -->
-
-    <!-- bottom navbar -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light mt-3">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" href="https://github.com/iragomez68/iragomez68.github.io.git" target="_blank">GitHub Pages</a>
-            <a class="nav-item nav-link" href="https://github.com/iragomez68/project-three-amigos-mci.git" target="_blank">Three Amigos repo</a>
-          </div>
-        </div>
-      </div>
-	</nav>    
-
+    </div><!-- /container --> 
   </body>
 </html>
+

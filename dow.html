@@ -1,0 +1,120 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap/Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Resources/assets/css/style.css">
+    <title>Day of Week</title>
+    <link rel="shortcut icon" href="Resources/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="Resources/assets/images/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+     <!-- navbar -->
+     <nav class="navbar navbar-light navbar-expand-md bg-light justify-content-center">
+      <a href="index.html" class="navbar-brand d-flex  mr-auto justify-content-center" style="color: white; background-color: teal; width: 300px; justify-content: center; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Major Crime Indicators</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+    <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
+      <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Plots
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="median.html">vs. HH Median Income</a>
+            <a class="dropdown-item" href="dow.html">vs. Day of Week</a>
+            <a class="dropdown-item" href="tod.html">vs. Time of Day</a>
+            <a class="dropdown-item" href="premise.html">vs. Premise Type</a>
+          </div>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="comparison.html">Comparison</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="data.html">Data</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+<!-- /navbar -->
+
+    <!-- container -->
+    <div class="container pt-5">
+      <!-- row -->
+      <div class="row">
+
+        <!-- summary -->
+        <div class="col-lg-7">
+          <h1 class="mb-4">Day of Week</h1>
+          <hr class="mr-4">
+          <img class="mb-2 mr-4 pr-5 img-fluid" src="Resources/assets/images/dow.png" alt="vs. dow of week">
+          <p class="pt-3 mr-4">The source data was grouped by MCI and the day of the week to count the number of crimes for these 2 dimensions. The resulting dataframe was pivoted by the MCI to obtain a new dataframe with 7 rows (one for each day of the week) and 5 columns (one for each MCI). The pivoted dataframe was used to perform the Anova test which yielded a pvalue = 0.9999953803301733 by which we can conclude that there is no significant statistical difference between the median of crime occurrences across the days of the week.</p>
+         
+        </div><!-- /summary -->
+                
+        <!-- visualizations -->
+        <div class="card col-lg ml-3">
+          <h3 class="pb-4">Visualizations</h3> 
+          <div class="row justify-content-center">
+            <div class="col-lg-5 col-sm-3">
+              <div class="card mb-3">
+                <a href="median.html" >
+                  <img class="card-img-top" src="Resources/assets/images/median.png" alt="vs. Household Median Income">
+                </a>
+                <div class="card-body">
+                  <h6 class="card-title text-center">HH Median</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-sm-3">
+              <div class="card mb-3">
+                <a href="dow.html" >
+                  <img class="card-img-top" src="Resources/assets/images/dow.png" alt="vs. Day of Week">
+                </a>
+                <div class="card-body">
+                  <h6 class="card-title text-center">Day of Week</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-sm-3">
+              <div class="card mb-3">
+                <a href="tod.html" >
+                  <img class="card-img-top" src="Resources/assets/images/tod.png" alt="vs. Time of Day">
+                </a>
+                <div class="card-body">
+                  <h6 class="card-title text-center">Time of Day</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-sm-3">
+              <div class="card mb-3">
+                <a href="premise.html" >
+                  <img class="card-img-top" src="Resources/assets/images/premise.png" alt="vs. Premise Type">
+                </a>
+                <div class="card-body">
+                  <h6 class="card-title text-center">Premise Type</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /visualizations -->
+      </div><!-- /row -->
+    </div><!-- /container -->    
+  </body>
+</html>
